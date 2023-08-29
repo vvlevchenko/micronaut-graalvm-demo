@@ -11,7 +11,7 @@ import jakarta.inject.Inject;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
-class ConferenceControllerTest {
+class UserControllerTest {
 
     @Inject
     @Client("/")
@@ -19,7 +19,7 @@ class ConferenceControllerTest {
 
     @Test
     void testHello() {
-        HttpRequest<?> request = HttpRequest.GET("/conferences/random");
+        HttpRequest<?> request = HttpRequest.GET("/users/random");
         String body = client.toBlocking().retrieve(request);
         assertNotNull(body);
     }

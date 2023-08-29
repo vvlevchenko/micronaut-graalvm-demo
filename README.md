@@ -41,10 +41,13 @@ Change it:
     - select the built image in the Services view
     - click `Show Layers` button
     - click `Analyse image for more information`
-    - Select the layer with "COPY" of `application`/`application.debug` file and press "Download file" button
+    - Select the layer with "COPY" of `application` file and press "Download file" button
+    - Do the same for `application.debug` file
     - place the downloaded files into `target` folder
 
-5. Check that `application`/`application.debug` is executable `chmod 755 target/application`
+5. Make `application` executable:
+   - select it in the project view-> 
+      - run `chmod 755 target/application`
 
 6. Configure `GraalVM Native Image` run configuration:
    - Executable: `target/application`
@@ -55,8 +58,8 @@ Change it:
        - Image tag: gdbserver 
        - Run options: add `-p 8080:8080`
        
-7. Set break point to "Application" class
-
+7. Set break point to `UserController` class, `randomConf` get method
 8. Press "Debug" on the created `GraalVM Native Image` run configuration
+9. Go to http://localhost:8080/users/random to stop on this endpoint.
  
 

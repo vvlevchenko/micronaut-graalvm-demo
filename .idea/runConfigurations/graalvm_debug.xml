@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="graalvm-debug" type="GraalVmRunConfiguration" factoryName="GraalVmBinary">
+    <run-attributes version="1" native-image="$PROJECT_DIR$/target/application" target-environment="gdbserver">
+      <arguments />
+      <module name="demo" />
+    </run-attributes>
+    <method v="2" />
+  </configuration>
+</component>

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for default" enabled="true">
+      <profile name="Annotation profile for demo" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <option name="micronaut.processing.group" value="example.micronaut" />
-        <option name="micronaut.processing.module" value="default" />
+        <option name="micronaut.processing.module" value="demo" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject-java/4.0.0/micronaut-inject-java-4.0.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar" />
@@ -22,6 +22,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar" />
           <entry name="$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-symbol-solver-core/3.25.4/javaparser-symbol-solver-core-3.25.4.jar" />
           <entry name="$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.25.4/javaparser-core-3.25.4.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-graal/4.0.0/micronaut-graal-4.0.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/serde/micronaut-serde-processor/2.0.1/micronaut-serde-processor-2.0.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/serde/micronaut-serde-api/2.0.1/micronaut-serde-api-2.0.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-context/4.0.0/micronaut-context-4.0.0.jar" />
@@ -42,7 +43,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="default (1)" options="-parameters -Amicronaut.processing.group=example.micronaut -Amicronaut.processing.module=default" />
-      <module name="demo" options="-parameters -Amicronaut.processing.group=example.micronaut -Amicronaut.processing.module=default" />
+      <module name="demo" options="-parameters -Amicronaut.processing.group=example.micronaut -Amicronaut.processing.module=demo" />
     </option>
   </component>
 </project>
