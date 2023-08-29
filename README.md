@@ -1,6 +1,9 @@
 
 <h2>Run/debug the Micronaut application in native (no JVM) mode inside docker container</h2>
 
+We build our native application  with maven using docker-native packaging. 
+Then build docker debug graalvm image with coping there built classes and dependencies. 
+Then we take from this docker image the "application" executable file and run debug using it on docker target.
 
 1. Run maven target `mvn package -Dpackaging=docker-native` to build native application, profile: `graalvm`
 
@@ -33,7 +36,7 @@ Change it:
    ARG PORT=8080
    EXPOSE ${PORT}
    ```
-3. Run "Build image" for `Debug.dockerfile`: click on the gutter in the file ->Build image
+3. Run "Build image" for `Debug.dockerfile`(click on the gutter ->Build image)
 4. Extract application and application.debug into `target` or your output directory: 
     - select the built image in the Services view
     - click `Show Layers` button
@@ -44,16 +47,16 @@ Change it:
 5. Check that `application`/`application.debug` is executable `chmod 755 target/application`
 
 6. Configure `GraalVM Native Image` run configuration:
-   - Executable: target/application 
+   - Executable: `target/application`
    - Use classpath module: `demo`
+   - Run on target: Docker
+     - Dockerfile: `target/Debug.dockerfile` 
+     - Optional:
+       - Image tag: gdbserver 
+       - Run options: add `-p 8080:8080`
+       
+7. Set break point to "Application" class
 
-9. Run on target: Docker
-   Dockerfile: target/Dockerfile.debug
-   Optional:
-      Image tag: gdbserver
-      Run options: add `-p 8080:8080`
-10. Set break point
-
-11. Press debug on your new created run configuration
+8. Press "Debug" on the created `GraalVM Native Image` run configuration
  
 
