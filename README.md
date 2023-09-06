@@ -41,8 +41,9 @@ Change it:
     - select the built image in the Services view
     - click `Show Layers` button
     - click `Analyse image for more information`
-    - Select the layer with "COPY" of `application` file and press "Download file" button
-    - Do the same for `application.debug` file
+    - select the layer with "COPY" of `application` file 
+    - select this file in the tree and press "Download file" button on the toolbar
+    - do the same for `application.debug` file
     - place the downloaded files into `target` folder
 
 5. Make `application` executable:
@@ -58,8 +59,11 @@ Change it:
        - Image tag: gdbserver 
        - Run options: add `-p 8080:8080`
        
-7. Set break point to `UserController` class, `randomConf` get method
+7. Set break point to `UserController` class, `random` get method
 8. Press "Debug" on the created `GraalVM Native Image` run configuration
 9. Go to http://localhost:8080/users/random to stop on this endpoint.
  
 
+Troubleshooting
+https://youtrack.jetbrains.com/issue/IDEA-331760/ It is not possible to set breakpoints for some classes/methods
+...
