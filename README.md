@@ -37,20 +37,7 @@ Change it:
    EXPOSE ${PORT}
    ```
 3. Run "Build image" for `Debug.dockerfile`(click on the gutter ->Build image)
-4. Extract application and application.debug into `target` or your output directory: 
-    - select the built image in the Services view
-    - click `Show Layers` button
-    - click `Analyse image for more information`
-    - select the layer with "COPY" of `application` file 
-    - select this file in the tree and press "Download file" button on the toolbar
-    - do the same for `application.debug` file
-    - place the downloaded files into `target` folder
-
-5. Make `application` executable:
-   - select it in the project view-> 
-      - run `chmod 755 target/application`
-
-6. Configure `GraalVM Native Image` run configuration:
+4. Configure `GraalVM Native Image` run configuration:
    - Executable: `target/application`
    - Use classpath module: `demo`
    - Run on target: Docker
@@ -59,9 +46,9 @@ Change it:
        - Image tag: gdbserver 
        - Run options: add `-p 8080:8080`
        
-7. Set break point to `UserController` class, `random` get method
-8. Press "Debug" on the created `GraalVM Native Image` run configuration
-9. Go to http://localhost:8080/users/random to stop on this endpoint.
+5. Set break point to `UserController` class, `random` get method
+6. Press "Debug" on the created `GraalVM Native Image` run configuration
+7. Go to http://localhost:8080/users/random to stop on this endpoint.
  
 
 Troubleshooting
